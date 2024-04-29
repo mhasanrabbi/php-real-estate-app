@@ -13,6 +13,7 @@ catch( PDOException $exception ) {
 }
 
 define("BASE_URL", "http://localhost/php_real_estate/");
+define("ADMIN_URL", BASE_URL . "admin/");
 
 define("SMTP_HOST", "sandbox.smtp.mailtrap.io");
 define("SMTP_PORT", "2525");

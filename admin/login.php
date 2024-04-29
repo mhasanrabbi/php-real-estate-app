@@ -1,4 +1,8 @@
-<?php require_once 'header.php' ?>
+<?php
+
+require_once 'layouts/top.php';
+
+?>
 
 <section class="section">
     <div class="container container-login">
@@ -36,4 +40,4 @@
     </div>
 </section>
 
-<?php require_once 'footer.php' ?>
+<?php require_once 'layouts/footer.php' ?>
