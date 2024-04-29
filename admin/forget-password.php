@@ -23,11 +23,12 @@ if(isset($_POST['form_forget_password'])) {
         }
 
         $token = time();
+        $statement = $pdo->prepare("UPDATE users SET token=? WHERE email=?");
+        $statement->execute([$token,$_POST['email']]);
 
-        $email_message = "Please click on the following link in order to reset the password: ";
-        $email_message .= '<a href="'.ADMIN_URL.'reset-password.php?email='.$_POST['email'].' & token='.$token.'">Reset Password</a>';
-
-
+        $link = ADMIN_URL.'reset-password.php?email='.$_POST['email'].'&token='.$token;
+        $email_message = 'Please click on this link to reset your password: <br>';
+        $email_message .= '<a href="'.$link.'">Click Here</a>';
 
         $mail = new PHPMailer(true);
 
